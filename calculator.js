@@ -374,7 +374,7 @@ function calculator(button){
             result = eval(formula_str);
         }catch(error){
             if(error instanceof SyntaxError){
-                result = 'Syntax Error'
+                result = 'Syntax Error';
                 updateOutputResult(result);
                 return;
             }
@@ -383,8 +383,9 @@ function calculator(button){
         ans = result;
         data.operation = [result];
         data.formula = [result]
-        console.log(data);
-        updateOutputResult(result);
+        console.log("Data Object:::", data);
+        console.log("Result:::", result);
+        updateOutputResult(result.toFixed(4));
         return;
     }
     updateOutputOperation(data.operation.join(''))
